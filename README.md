@@ -1,57 +1,32 @@
-# emberconf2019-robust-data-fetching
+# EmberConf 2019 Training – Robust Data Fetching
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Hi there!
 
-## Prerequisites
+We're super excited that you're attending our **Robust Data Fetching** training at EmberConf on Monday. 😀
 
-You will need the following things properly installed on your computer.
+Follow the steps below to make sure your computer is set up with our training app.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+Conference WiFi isn't super reliable, so we recommend doing the setup ahead of time, at home or work.
 
-## Installation
+We'll ask that you `git pull` one more time the morning of the training to get the latest code. If you're able to, please follow these instructions from your hotel before you arrive at the conference center.
 
-* `git clone <repository-url>` this repository
-* `cd emberconf2019-robust-data-fetching`
-* `npm install`
+# Setup
 
-## Running / Development
+> We're using a few new addons, so if you have any trouble getting started just shoot us an email at [hello@embermap.com](mailto:hello@embermap.com).
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+## Node.js
 
-### Code Generators
+We're using Node.js 10.15.x, which is the current LTS version.
 
-Make use of the many generators for code, try `ember help generate` for more details
+## App
 
-### Running Tests
+To get this app on your computer,
 
-* `ember test`
-* `ember test --server`
+1. Open terminal
+2. Clone this git repository: `git clone git@github.com:embermap/emberconf2019-robust-data-fetching.git`
+3. Move into the directory: `cd emberconf2019-robust-data-fetching`
+4. Run NPM install: `npm install` (You might get some warnings, thats ok!)
+5. Serve the app `ember s`
+6. If you can see the screen below, you're all set!
 
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+See you Monday! 👋

@@ -27,7 +27,8 @@ To get this app on your computer,
 3. Move into the directory: `cd emberconf2019-robust-data-fetching`
 4. Run NPM install: `npm install` (You might get some warnings, thats ok!)
 5. Serve the app `ember s`
-6. If you can see the screen below, you're all set!
+6. Visit http://localhost:4200
+7. If you can see the screen below, you're all set!
 
 
 ![data2](https://user-images.githubusercontent.com/89411/53997559-a548c980-410a-11e9-98d3-3e316991573e.png)

@@ -8,7 +8,7 @@ Follow the steps below to make sure your computer is set up with our training ap
 
 Conference WiFi isn't super reliable, so we recommend doing the setup ahead of time, at home or work.
 
-We'll ask that you `git pull` one more time the morning of the training to get the latest code. If you're able to, please follow these instructions from your hotel before you arrive at the conference center.
+We'll ask that you `git pull` one more time the morning of the training to get the latest code.
 
 # Setup
 

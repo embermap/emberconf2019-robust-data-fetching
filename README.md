@@ -26,7 +26,7 @@ To get this app on your computer,
 2. Clone this git repository: `git clone git@github.com:embermap/emberconf2019-robust-data-fetching.git`
 3. Move into the directory: `cd emberconf2019-robust-data-fetching`
 4. Run NPM install: `npm install` (You might get some warnings, thats ok!)
-5. Serve the app `ember s`
+5. Serve the app `npx ember s`
 6. Visit http://localhost:4200
 7. If you can see the screen below, you're all set!
 

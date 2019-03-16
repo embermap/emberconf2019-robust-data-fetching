@@ -1,0 +1,23 @@
+<li class='my-4 flex flex-row items-center'>
+  {{#link-to route
+    class='block my-1 text-black no-underline border-l-4 border-transparent
+    hover:opacity-50 transition flex-grow'
+    activeClass='border-blue hover:opacity-100'
+  }}
+    <div class="flex">
+      <div class="w-1/4 flex-no-shrink text-3xl text-right pr-3">
+        {{route}}
+      </div>
+      <div class='pt-px flex flex-col justify-center'>
+        <p class='leading-tight'>
+          {{yield}}
+        </p>
+        {{#if type}}
+          <p class="mt-1 text-sm opacity-50">
+            {{type}}
+          </p>
+        {{/if}}
+      </div>
+    </div>
+  {{/link-to}}
+</li>

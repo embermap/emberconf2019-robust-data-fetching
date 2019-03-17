@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'emberconf2019-robust-data-fetching',
+    podModulePrefix: 'emberconf2019-robust-data-fetching/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

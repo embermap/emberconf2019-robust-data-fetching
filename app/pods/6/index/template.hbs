@@ -1,0 +1,42 @@
+{{#if model}}
+  <div class="font-bold text-4 mb-1 mt-8">
+    Stocks
+  </div>
+
+  <div class="flex">
+    <ul class="list-reset p-0 mr-12">
+      {{#each model as |stock|}}
+        <li class="mb-3">
+          <div class="text-bold text-4">
+            {{stock.symbol}}
+          </div>
+
+          {{#link-to "6.price" stock.id
+            class="text-grey-darkest underline text-6"}}
+            Price
+          {{/link-to}}
+
+          |
+
+          {{#link-to "6.reviews" stock.id
+            class="text-grey-darkest underline text-6"}}
+            Reviews
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <div>
+      <p class="max-w-sm">
+        You can now view reviews about each stock.
+      </p>
+    </div>
+  </div>
+
+{{else}}
+  <div class="max-w-sm mt-3">
+    <p>
+      Once the stocks are loaded this message will disappear!
+    </p>
+  </div>
+{{/if}}

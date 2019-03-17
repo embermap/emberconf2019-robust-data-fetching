@@ -1,0 +1,38 @@
+<a href="#"
+  onclick={{action "toggle"}}
+  data-target-id="server-speed-toggle"
+  class="text-grey"
+>
+  {{fa-icon "cog"}}
+</a>
+
+{{#if isShowingServerSpeed}}
+  {{#liquid-tether
+    target='[data-target-id="server-speed-toggle"]'
+    offset="-5px 0"
+    attachment="top right"
+    targetAttachment="bottom right"
+  }}
+    <div class='
+      w-64
+      bg-white p-3 mb-4
+      border-blue border-2 shadow
+    '>
+      <h2 class="m-0 p-0 mb-3 text-lg">Server response timing</h2>
+
+      <div class="flex items-center">
+        <input type="range"
+          min="0"
+          max="10000"
+          step="100"
+          value={{delay}}
+          oninput={{perform updateServerSpeed}}
+          class="w-4/5">
+
+        <div class="pl-3 ml-auto w-2/5 text-right">
+          {{delaySeconds}}s
+        </div>
+      </div>
+    </div>
+  {{/liquid-tether}}
+{{/if}}

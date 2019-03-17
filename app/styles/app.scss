@@ -1,1 +1,22 @@
 @import 'tailwind';
+
+@keyframes highlight {
+  0% {
+    box-shadow: 5px 5px 0 0 transparent, -5px -5px 0 0 transparent, 5px -5px 0 0 transparent, -5px 5px 0 0 transparent;
+    background-color: white;
+  }
+  10% {
+    box-shadow: 5px 5px 0 0 yellow, -5px -5px 0 0 yellow, 5px -5px 0 0 yellow, -5px 5px 0 0 yellow;
+    background-color: yellow;
+  }
+  100% {
+    box-shadow: 5px 5px 0 0 transparent, -5px -5px 0 0 transparent, 5px -5px 0 0 transparent, -5px 5px 0 0 transparent;
+    background-color: white;
+  }
+}
+
+.highlight {
+  animation: 0.75s ease-in-out highlight;
+  margin: -1px;
+  padding: 1px;
+}

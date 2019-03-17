@@ -1,0 +1,29 @@
+<ul class="list-reset p-0">
+  {{#each model as |stock|}}
+    <li class="mb-4">
+      <h2>
+        {{stock.symbol}}
+      </h2>
+
+      <h3 class="text-grey-darker">
+        News articles
+      </h3>
+      
+      <ul class="list-reset p-0">
+        {{#each stock.articles as |article|}}
+          <li>
+            {{article.title}}
+          </li>
+
+          <ul class="list-reset pl-4 mb-3 mt-1">
+            {{#each article.comments as |comment|}}
+              <div class="mb-1">
+                {{comment.text}}
+              </div>
+            {{/each}}
+          </ul>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>

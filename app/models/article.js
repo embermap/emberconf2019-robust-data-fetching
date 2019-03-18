@@ -1,7 +1,6 @@
 import DS from 'ember-data';
-import LoadableModel from 'ember-data-storefront/mixins/loadable-model';
 
-export default DS.Model.extend(LoadableModel, {
+export default DS.Model.extend({
   title: DS.attr('string'),
-  comments: DS.hasMany('comment', { async: false })
+  comments: DS.hasMany('comment')
 });

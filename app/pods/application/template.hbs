@@ -1,5 +1,5 @@
 <div class="flex">
-  <div class="w-64 flex-no-shrink h-screen overflow-y-scroll p-4 border-r bg-grey-lightest {{if isHidingSidebar 'hidden'}}">
+  <div class="w-64 flex-no-shrink p-4 border-r bg-grey-lightest {{if isHidingSidebar 'hidden'}}">
     <p class='mt-3 text-xl'>
       {{#link-to '1' class='text-center text-black no-underline text-base font-bold uppercase'}}
         Robust <span class="text-blue">Data Fetching</span>
@@ -35,7 +35,7 @@
       {{/nav-link}}
     </ul>
   </div>
-  <div class="flex-grow font-sans min-h-screen">
+  <div class="flex-grow font-sans">
     {{!-- <a {{action (toggle 'isHidingSidebar' this)}} href=""
       class='absolute z-10 transition inline-block p-4 text-black opacity-25 hover:opacity-100'>
       {{fa-icon (if isHidingSidebar 'chevron-right' 'chevron-left')}}

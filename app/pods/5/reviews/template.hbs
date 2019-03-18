@@ -9,10 +9,15 @@
   {{model.symbol}} reviews
 </h1>
 
-<ul class="list-reset p-0 mr-12" {{highlight-changes}}>
-  {{#each model.reviews as |review|}}
-    <li class="mb-1">
-      {{review.rating}} / 5 stars
-    </li>
-  {{/each}}
-</ul>
+{{#each model.reviews as |review|}}
+  <div class="mt-4">
+    {{star-rating rating=review.rating}}
+    <div class="mt-1 text-grey-darkest text-sm">
+      {{review.name}}
+    </div>
+  </div>
+{{/each}}
+
+<p class="mt-4 max-w-sm text-grey-darker text-sm">
+  Note: Stock reviews are updated monthly.
+</p>

@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('1');
+  this.route('1', { path: '/' });
 
   this.route('2', function() {
     this.route('stock-detail', { path: '/:stock_id' });
@@ -26,25 +26,20 @@ Router.map(function() {
     this.route('reviews', { path: '/:stock_id/reviews' });
   });
 
-  this.route('6', function() {
-    this.route('price', { path: '/:stock_id/price' });
-    this.route('reviews', { path: '/:stock_id/reviews' });
-  });
+  this.route('6', function() {});
 
-  this.route('7', function() {
-    this.route('price', { path: '/:stock_id/price' });
-    this.route('reviews', { path: '/:stock_id/reviews' });
-  });
+  this.route('7', function() {});
 
   this.route('8', function() {});
 
-  this.route('9', function() {});
+  this.route('9');
 
-  this.route('10', function() {});
-
-  this.route('11', function() {});
-
-  this.route('12');
+  this.route('advanced', function() {
+    this.route('1', function() {
+      this.route('price', { path: '/:stock_id/price' });
+      this.route('reviews', { path: '/:stock_id/reviews' });
+    });
+  });
 });
 
 export default Router;

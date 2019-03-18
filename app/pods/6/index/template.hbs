@@ -1,42 +1,25 @@
-{{#if model}}
-  <div class="font-bold text-4 mb-1 mt-8">
-    Stocks
-  </div>
+<ul class="list-reset p-0">
+  {{#each (sort-by "name" model) as |stock|}}
+    <li class="mb-5 pb-5 border-b">
+      <div class="flex">
+        <h2 class="w-140px flex-no-grow flex-no-shrink">
+          {{stock.symbol}}
+        </h2>
 
-  <div class="flex">
-    <ul class="list-reset p-0 mr-12">
-      {{#each model as |stock|}}
-        <li class="mb-3">
-          <div class="text-bold text-4">
-            {{stock.symbol}}
-          </div>
+        <div class="flex-1">
+          <h3 class="text-grey-darker text-bold text-xs">
+            News articles
+          </h3>
 
-          {{#link-to "6.price" stock.id
-            class="text-grey-darkest underline text-6"}}
-            Price
-          {{/link-to}}
-
-          |
-
-          {{#link-to "6.reviews" stock.id
-            class="text-grey-darkest underline text-6"}}
-            Reviews
-          {{/link-to}}
-        </li>
-      {{/each}}
-    </ul>
-
-    <div>
-      <p class="max-w-sm">
-        You can now view reviews about each stock.
-      </p>
-    </div>
-  </div>
-
-{{else}}
-  <div class="max-w-sm mt-3">
-    <p>
-      Once the stocks are loaded this message will disappear!
-    </p>
-  </div>
-{{/if}}
+          <ul class="list-reset p-0">
+            {{#each stock.articles as |article|}}
+              <li>
+                {{article.title}} 
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </li>
+  {{/each}}
+</ul>

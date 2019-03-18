@@ -1,29 +1,51 @@
 <ul class="list-reset p-0">
-  {{#each model as |stock|}}
-    <li class="mb-4">
-      <h2>
-        {{stock.symbol}}
-      </h2>
+  {{#each (sort-by "name" model) as |stock|}}
+    <li class="mb-5 pb-5 border-b">
+      <div class="flex">
+        <h2 class="w-140px flex-no-grow flex-no-shrink">
+          {{stock.symbol}}
+        </h2>
 
-      <h3 class="text-grey-darker">
-        News articles
-      </h3>
-      
-      <ul class="list-reset p-0">
-        {{#each stock.articles as |article|}}
-          <li>
-            {{article.title}}
-          </li>
+        <div class="flex-1">
+          <h3 class="text-grey-darker text-bold text-xs">
+            News articles
+          </h3>
 
-          <ul class="list-reset pl-4 mb-3 mt-1">
-            {{#each article.comments as |comment|}}
-              <div class="mb-1">
-                {{comment.text}}
-              </div>
+          <ul class="list-reset p-0">
+            {{#each stock.articles as |article|}}
+              <li>
+                <div>
+                  {{article.title}}
+
+                  <a href="#"
+                    {{action "toggleArticleComments" article}}
+                    class="ml-2 text-blue text-sm no-underline">
+
+                    {{if (contains article articlesShowingComments)
+                      'Hide' 'Show'
+                    }} comments
+
+                  </a>
+                </div>
+
+                {{#if (contains article articlesShowingComments)}}
+                  <div class="ml-4 mt-2 mb-4">
+                    {{#8/components/load-data article 'comments' as |isLoading comments|}}
+
+                      {{!--
+                        use the data loading component to load the
+                        articles comments.
+                      --}}
+
+                    {{/8/components/load-data}}
+                  </div>
+                {{/if}}
+
+              </li>
             {{/each}}
           </ul>
-        {{/each}}
-      </ul>
+        </div>
+      </div>
     </li>
   {{/each}}
 </ul>

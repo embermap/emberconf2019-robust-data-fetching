@@ -1,7 +1,7 @@
 <div class="flex">
   <div class="w-64 flex-no-shrink h-screen overflow-y-scroll p-4 border-r bg-grey-lightest {{if isHidingSidebar 'hidden'}}">
     <p class='mt-3 text-xl'>
-      {{#link-to 'index' class='text-center text-black no-underline text-base font-bold uppercase'}}
+      {{#link-to '1' class='text-center text-black no-underline text-base font-bold uppercase'}}
         Robust <span class="text-blue">Data Fetching</span>
       {{/link-to}}
     </p>
@@ -15,40 +15,31 @@
       {{#nav-link '3' type="Exercise"}}
         Avoiding partial renders
       {{/nav-link}}
-      {{#nav-link '4' type="Group exercise"}}
+      {{#nav-link '4' type="Exercise"}}
         Declaring data needs
       {{/nav-link}}
       {{#nav-link '5' type="Exercise"}}
         Data dependencies
       {{/nav-link}}
       {{#nav-link '6' type="Exercise"}}
-        Evolving data needs
-      {{/nav-link}}
-      {{#nav-link '7' type='Lecture'}}
-        Storefront
-      {{/nav-link}}
-      {{#nav-link '8' type="Group exercise"}}
         N+1s
       {{/nav-link}}
-      {{#nav-link '9' type='Lecture'}}
-        Sync relationships
-      {{/nav-link}}
-      {{#nav-link '10' type='Exercise'}}
+      {{#nav-link '7' type='Exercise'}}
         Minimum meaningful data to render
       {{/nav-link}}
-      {{#nav-link '11' type="Exercise"}}
-        Providers
+      {{#nav-link '8' type="Exercise"}}
+        Data providers
       {{/nav-link}}
-      {{#nav-link '12' type='Lecture'}}
+      {{#nav-link '9' type='Lecture'}}
         Closing
       {{/nav-link}}
     </ul>
   </div>
   <div class="flex-grow font-sans min-h-screen">
-    <a {{action (toggle 'isHidingSidebar' this)}} href=""
+    {{!-- <a {{action (toggle 'isHidingSidebar' this)}} href=""
       class='absolute z-10 transition inline-block p-4 text-black opacity-25 hover:opacity-100'>
       {{fa-icon (if isHidingSidebar 'chevron-right' 'chevron-left')}}
-    </a>
+    </a> --}}
 
     <div class="px-8">
       {{outlet}}

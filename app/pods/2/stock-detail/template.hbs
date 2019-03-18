@@ -1,5 +1,12 @@
+<div class="mt-1">
+  {{#link-to "2.index"
+    class="text-5 text-grey-dark no-underline"}}
+    Back to stock list
+  {{/link-to}}
+</div>
+
 <h1>{{model.symbol}}</h1>
 
 The current price is
 
-<span {{highlight-changes key=model}}>${{model.price}}</span>.
+<span {{highlight-changes}}>{{format-money model.price}}</span>.

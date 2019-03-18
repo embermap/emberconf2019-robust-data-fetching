@@ -4,7 +4,7 @@ export default Route.extend({
 
   model(params) {
     return this.store.findRecord('stock', params.stock_id, {
-      include: 'reviews',
+      reload: true
     });
   }
 

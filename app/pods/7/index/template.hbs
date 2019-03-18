@@ -1,33 +1,44 @@
-<div class="font-bold text-4 mb-1 mt-8">
-  Stocks
-</div>
-
-<div class="flex">
-  <ul class="list-reset p-0 mr-12">
-    {{#each model as |stock|}}
-      <li class="mb-3">
-        <div class="text-bold text-4">
+<ul class="list-reset p-0">
+  {{#each (sort-by "name" model) as |stock|}}
+    <li class="mb-5 pb-5 border-b">
+      <div class="flex">
+        <h2 class="w-140px flex-no-grow flex-no-shrink">
           {{stock.symbol}}
+        </h2>
+
+        <div class="flex-1">
+          <h3 class="text-grey-darker text-bold text-xs">
+            News articles
+          </h3>
+
+          <ul class="list-reset p-0">
+            {{#each stock.articles as |article|}}
+              <li>
+                <div>
+                  {{article.title}}
+
+                  <a href="#"
+                    {{action "toggleArticleComments" article}}
+                    class="ml-2 text-blue text-sm no-underline">
+
+                    {{if (contains article articlesShowingComments)
+                      'Hide' 'Show'
+                    }} comments
+
+                  </a>
+                </div>
+
+                {{#if (contains article articlesShowingComments)}}
+                  <div class="ml-4 mt-2 mb-4">
+                    {{7/components/comments-list article=article}}
+                  </div>
+                {{/if}}
+
+              </li>
+            {{/each}}
+          </ul>
         </div>
-
-        {{#link-to "7.price" stock.id
-          class="text-grey-darkest underline text-6"}}
-          Price
-        {{/link-to}}
-
-        |
-
-        {{#link-to "7.reviews" stock.id
-          class="text-grey-darkest underline text-6"}}
-          Reviews
-        {{/link-to}}
-      </li>
-    {{/each}}
-  </ul>
-
-  <div>
-    <p class="max-w-sm">
-      You can now view reviews about each stock.
-    </p>
-  </div>
-</div>
+      </div>
+    </li>
+  {{/each}}
+</ul>

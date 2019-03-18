@@ -1,32 +1,61 @@
-{{#if model}}
-  <div class="font-bold text-4 mb-1 mt-8">
-    Stocks
-  </div>
+<div class="font-bold text-4 mb-1 mt-8">
+  Stocks
+</div>
 
-  <div class="flex">
-    <ul class="list-reset p-0 mr-12">
-      {{#each model as |stock|}}
-        <li class="mb-1">
-          {{#link-to "3.stock-detail" stock
-            class="text-grey-darkest underline"}}
-            {{stock.symbol}}
-          {{/link-to}}
-        </li>
-      {{/each}}
-    </ul>
+<div class="flex">
 
-    <div>
-      <p class="max-w-sm">
-        Ok great! You've got all the stocks loaded. Try clicking
-        on a symbol to view its details.
-      </p>
-    </div>
-  </div>
+  <ul class="list-reset p-0 mr-12">
 
-{{else}}
-  <div class="max-w-sm mt-3">
-    <p>
-      Once the stocks are loaded this message will disappear!
-    </p>
-  </div>
-{{/if}}
+    {{! static list }}
+    <li class="mb-1">
+      {{#link-to "3.stock-detail" "AAPL"
+        class="text-grey-darkest underline"}}
+        AAPL
+      {{/link-to}}
+    </li>
+    <li class="mb-1">
+      {{#link-to "3.stock-detail" "AMZN"
+        class="text-grey-darkest underline"}}
+        AMZN
+      {{/link-to}}
+    </li>
+    <li class="mb-1">
+      {{#link-to "3.stock-detail" "GOOGL"
+        class="text-grey-darkest underline"}}
+        GOOGL
+      {{/link-to}}
+    </li>
+    <li class="mb-1">
+      {{#link-to "3.stock-detail" "MSFT"
+        class="text-grey-darkest underline"}}
+        MSFT
+      {{/link-to}}
+    </li>
+    <li class="mb-1">
+      {{#link-to "3.stock-detail" "BRK.A"
+        class="text-grey-darkest underline"}}
+        BRK.A
+      {{/link-to}}
+    </li>
+    <li class="mb-1">
+      {{#link-to "3.stock-detail" "FB"
+        class="text-grey-darkest underline"}}
+        FB
+      {{/link-to}}
+    </li>
+
+    {{! dynamic list}}
+    {{!--
+    {{#each model as |stock|}}
+      <li class="mb-1">
+        {{#link-to "3.stock-detail" stock.id
+          class="text-grey-darkest underline"}}
+          {{stock.symbol}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+    --}}
+
+  </ul>
+
+</div>
